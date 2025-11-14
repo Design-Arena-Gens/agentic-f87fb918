@@ -1,0 +1,86 @@
+/* Global fintech style */
+:root {
+  --bg: #0b0f14;
+  --bg-muted: #0f141b;
+  --card: rgba(255,255,255,0.04);
+  --card-stroke: rgba(255,255,255,0.08);
+  --text: #e6edf3;
+  --text-dim: #9fb2c6;
+  --brand: #4f8cff;
+  --brand-2: #7c5cff;
+  --accent: #15d1a1;
+  --danger: #ff6b6b;
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(79,140,255,0.25), transparent 50%),
+              radial-gradient(1200px 600px at 80% 0%, rgba(124,92,255,0.25), transparent 50%),
+              linear-gradient(180deg, var(--bg), var(--bg-muted));
+}
+
+.container {
+  width: 100%;
+  max-width: 1120px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  backdrop-filter: saturate(160%) blur(12px);
+  background: rgba(11,15,20,0.6);
+  border-bottom: 1px solid var(--card-stroke);
+  z-index: 50;
+}
+
+.nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+.brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: 0.4px; }
+.brand img { width: 28px; height: 28px; }
+.muted { color: var(--text-dim); }
+
+.hero { padding: 64px 0 40px; }
+.hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 36px; align-items: center; }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+
+.h1 { font-size: clamp(36px, 6vw, 58px); line-height: 1.05; margin: 0 0 16px; }
+.gradient { background: linear-gradient(90deg, var(--brand), var(--brand-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lead { font-size: 18px; color: var(--text-dim); margin: 0 0 28px; }
+
+.input-row { display: flex; gap: 12px; }
+.input { flex: 1; background: var(--card); border: 1px solid var(--card-stroke); color: var(--text); padding: 14px 16px; border-radius: 12px; outline: none; }
+.button { background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: white; padding: 14px 18px; border: 0; border-radius: 12px; font-weight: 600; cursor: pointer; box-shadow: var(--shadow); }
+.button:hover { filter: brightness(1.05); }
+
+.card { background: var(--card); border: 1px solid var(--card-stroke); border-radius: var(--radius); box-shadow: var(--shadow); }
+.card-inner { padding: 18px; }
+
+.badge { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; padding: 8px 10px; border-radius: 999px; background: rgba(21,209,161,0.1); color: var(--accent); border: 1px solid rgba(21,209,161,0.3); }
+
+.section { padding: 28px 0; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr; } }
+
+.kpi { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
+.kpi .item { background: rgba(255,255,255,0.03); border: 1px dashed var(--card-stroke); border-radius: 12px; padding: 12px; text-align: center; }
+.kpi .num { font-size: 20px; font-weight: 700; }
+
+.pricing { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 900px) { .pricing { grid-template-columns: 1fr; } }
+
+.toggle { display: inline-flex; background: rgba(255,255,255,0.06); border: 1px solid var(--card-stroke); border-radius: 999px; padding: 4px; }
+.toggle button { border: 0; background: transparent; color: var(--text-dim); padding: 8px 12px; border-radius: 999px; cursor: pointer; font-weight: 600; }
+.toggle .active { background: var(--bg); color: var(--text); box-shadow: inset 0 0 0 1px var(--card-stroke); }
+
+.list { margin: 12px 0 0; padding: 0; list-style: none; }
+.list li { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; color: var(--text-dim); }
+.check { color: var(--accent); }
+
+.footer { padding: 40px 0 60px; color: var(--text-dim); text-align: center; }
